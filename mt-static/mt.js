@@ -1575,6 +1575,10 @@ MT.App = new Class( App, {
                 this.cpeList.forEach( function( cpe ) { cpe.toggleOn( true ); } );
                 break;
 
+            case "setModeCodepressWrapOn":
+                this.cpeList.forEach( function( cpe ) { cpe.toggleOn( true ); } );
+                break;
+
             case "setModeCodepressOff":
                 this.cpeList.forEach( function( cpe ) { cpe.toggleOff( true ); } );
                 break;
@@ -2436,6 +2440,9 @@ MT.App.CodePress = new Class( Object, {
         
         if ( this.options.match( 'linenumbers:off' ) )
             this.toggleLineNumbers();
+
+        if ( this.options.match( 'wrap:on' ) )
+            this.toggleWrap();
     },
 
 
