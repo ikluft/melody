@@ -2490,11 +2490,15 @@ MT.App.CodePress = new Class( Object, {
             this.editor.readOnly( this.textarea.readOnly ? true : false );
     },
 
-    
     toggleLineNumbers: function() {
-        var cn = this.editor.body.className;
-        this.editor.body.className = ( cn == '' || cn == 'show-line-numbers' )
-            ? 'hide-line-numbers' : 'show-line-numbers';
+        var b=this.editor.body, c=b.className;
+        b.className=(c.match('hide-line-numbers'))?c.replace(/hide-line-numbers/g
+        ,''):c+' hide-line-numbers';
+    },
+    
+    toggleWrap: function(){
+        var b=this.editor.body, c=b.className;
+        b.className=(c.match('wrap'))?c.replace(/wrap/g,''):c+' wrap';
     },
  
    
